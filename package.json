@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "eslint ./ && mocha",
-    "release-patch": "npm test && npm version && git push && git push --tags && npm publish"
+    "preversion": "npm test",
+    "release-patch": "npm version patch && npm publish",
+    "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "organic": "^0.2.0",
