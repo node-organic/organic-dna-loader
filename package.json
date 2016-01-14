@@ -10,11 +10,11 @@
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
-    "organic": "^0.2.0",
-    "organic-dna-branches": "0.0.2",
-    "organic-dna-fold": "0.1.0",
-    "organic-dna-fsloader": "0.0.2",
-    "organic-dna-resolve": "0.0.2"
+    "organic": ">=1.0.0",
+    "organic-dna-branches": "^0.0.x",
+    "organic-dna-fold": "^0.1.x",
+    "organic-dna-fsloader": "^0.0.x",
+    "organic-dna-resolve": "^0.0.x"
   },
   "author": "Boris Filipov",
   "license": "MIT",
