@@ -14,7 +14,7 @@
     "organic-dna-branches": "^0.0.x",
     "organic-dna-fold": "^0.1.x",
     "organic-dna-fsloader": "^0.0.x",
-    "organic-dna-resolve": "^0.0.x"
+    "organic-dna-resolve": "0.0.3"
   },
   "author": "Boris Filipov",
   "license": "MIT",
