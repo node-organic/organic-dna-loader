@@ -6,8 +6,9 @@ in-memory object representation.
 Combines :
 
 * "organic-dna-fsloader"
-* "organic-dna-fold"
-* "organic-dna-branches"
+* "organic-dna-cellmodes"
+  * "organic-dna-fold"
+  * "organic-dna-branches"
 * "organic-dna-resolve"
 
 ## api & usage
