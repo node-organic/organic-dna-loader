@@ -7,13 +7,14 @@
     "test": "eslint ./ && mocha",
     "preversion": "npm test",
     "release-patch": "npm version patch && npm publish",
+    "release-minor": "npm version minor && npm publish",
     "postversion": "git push && git push --tags"
   },
   "dependencies": {
     "organic": ">=1.0.0",
     "organic-dna-cellmodes": "^0.1.0",
     "organic-dna-fsloader": "^0.0.x",
-    "organic-dna-resolve": "0.0.3"
+    "organic-dna-resolve": "^0.1.0"
   },
   "author": "Boris Filipov",
   "license": "MIT",
