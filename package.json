@@ -1,6 +1,6 @@
 {
   "name": "organic-dna-loader",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "description": "Simple utility module exporting function for loading and transforming DNA into in-memory object representation.",
   "main": "index.js",
   "scripts": {
