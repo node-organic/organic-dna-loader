@@ -14,7 +14,7 @@
     "organic": ">=1.0.0",
     "organic-dna-cellmodes": "^0.1.0",
     "organic-dna-fsloader": "^0.0.x",
-    "organic-dna-resolve": "^0.1.0"
+    "organic-dna-resolve": "^0.2.0"
   },
   "author": "Boris Filipov",
   "license": "MIT",
