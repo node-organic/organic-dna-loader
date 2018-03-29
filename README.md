@@ -13,8 +13,9 @@ Combines :
 
 ## api & usage
 
-* :warning: `process.env.CELL_MODE` if present is used to fold respective
-`DNA[CELL_MODE]` branch into root
+* `process.env.CELL_MODE` if present is used to fold respective
+`DNA[CELL_MODE]` branch into root unless `dnaMode` is provided as 
+within options argument
 
 
 ### load from default `cwd + '/dna'`
@@ -31,6 +32,18 @@ dnaLoader(function(err, dna){
 ```
 var dnaLoader = require('organic-dna-loader')
 dnaLoader('./directory/dna', function(err, dna){
+
+})
+```
+
+### load with options
+
+```
+var dnaLoader = require('organic-dna-loader')
+dnaLoader({
+  dnaSourcePath: './directory/dna',
+  dnaMode: 'customMode'
+}, function(err, dna){
 
 })
 ```

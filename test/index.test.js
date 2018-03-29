@@ -44,4 +44,17 @@ describe('dna-loader', function () {
       next()
     })
   })
+
+  it('works with options argument', function (next) {
+    var loader = require('../index')
+    loader({
+      dnaSourcePath: __dirname + '/sample-dna',
+      dnaMode: '_mode1'
+    }, function (err, dna) {
+      expect(err).to.be.falsy
+      expect(dna).to.be.object
+      expect(dna.index.property).to.eq('updated-42')
+      next()
+    })
+  })
 })
