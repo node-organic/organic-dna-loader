@@ -31,10 +31,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/outbounder/organic-dna-loader.git"
+    "url": "https://github.com/node-organic/organic-dna-loader.git"
   },
   "bugs": {
-    "url": "https://github.com/outbounder/organic-dna-loader/issues"
+    "url": "https://github.com/node-organic/organic-dna-loader/issues"
   },
-  "homepage": "https://github.com/outbounder/organic-dna-loader"
+  "homepage": "https://github.com/node-organic/organic-dna-loader"
 }
