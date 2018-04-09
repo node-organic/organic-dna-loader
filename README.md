@@ -47,3 +47,19 @@ dnaLoader({
 
 })
 ```
+
+### load from multiple sources
+
+
+```
+var dnaLoader = require('organic-dna-loader')
+dnaLoader({
+  dnaSourcePaths: [
+    './directory/dna',
+    './directory2/dna2'
+  ],
+  dnaMode: 'customMode'
+}, function(err, dna){
+
+})
+```
