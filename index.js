@@ -34,14 +34,23 @@ module.exports = function loadDna (src, next) {
       if (err) return nextDna(err)
       // fold dna based on cell mode
       if (dnaMode) {
-        selectModes(dna, dnaMode)
+        try {
+          selectModes(dna, dnaMode)
+        } catch (e) {
+          return nextDna(e)
+        }
       }
       nextDna()
     })
   }, function (err) {
     if (err) return next(err)
-    // resolve any referrences
-    resolve(dna)
+
+    try {
+      // resolve any referrences
+      resolve(dna)
+    } catch (e) {
+      return next(e)
+    }
 
     next(null, dna)
   })
