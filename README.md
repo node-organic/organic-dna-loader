@@ -5,7 +5,7 @@ in-memory object representation.
 
 Combines :
 
-* "organic-dna-fsloader"
+* "organic-dna-fsloader v1.1.0" for loading .json and .yaml files
 * "organic-dna-cellmodes"
   * "organic-dna-fold"
   * "organic-dna-branches"

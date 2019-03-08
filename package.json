@@ -12,19 +12,22 @@
   },
   "dependencies": {
     "async": "^2.6.0",
-    "organic": ">=1.0.0",
+    "organic": "^1.0.0",
     "organic-dna-cellmodes": "^0.1.0",
-    "organic-dna-fsloader": "^0.0.x",
+    "organic-dna-fsloader": "^1.1.0",
     "organic-dna-resolve": "^1.0.0"
   },
   "author": "Boris Filipov",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^3.4.1",
-    "mocha": "^2.3.4",
-    "eslint": "^1.10.3",
-    "eslint-config-standard": "^4.4.0",
-    "eslint-plugin-standard": "^1.3.1"
+    "chai": "^4.2.0",
+    "eslint": "^5.15.1",
+    "eslint-config-standard": "^12.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-node": "^8.0.1",
+    "eslint-plugin-promise": "^4.0.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "mocha": "^6.0.2"
   },
   "directories": {
     "test": "test"
