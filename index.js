@@ -9,6 +9,8 @@ var async = require('async')
 module.exports = function loadDna (src, next) {
   var dnaSourcePaths = src
   var dnaMode = process.env.CELL_MODE
+  var beforeResolve = null
+  var afterResolve = null
   if (!Array.isArray(src)) {
     dnaSourcePaths = [src]
   }
@@ -25,6 +27,12 @@ module.exports = function loadDna (src, next) {
     }
     if (src.dnaMode) {
       dnaMode = src.dnaMode
+    }
+    if (src.beforeResolve) {
+      beforeResolve = src.beforeResolve
+    }
+    if (src.beforeResolve) {
+      afterResolve = src.afterResolve
     }
   }
 
@@ -47,11 +55,16 @@ module.exports = function loadDna (src, next) {
 
     try {
       // resolve any referrences
+      if (beforeResolve) {
+        dna = beforeResolve(dna)
+      }
       resolve(dna)
+      if (afterResolve) {
+        dna = afterResolve(dna)
+      }
     } catch (e) {
       return next(e)
     }
-
     next(null, dna)
   })
 }

@@ -6,10 +6,8 @@ in-memory object representation.
 Combines :
 
 * "organic-dna-fsloader v1.1.0" for loading .json and .yaml files
-* "organic-dna-cellmodes"
-  * "organic-dna-fold"
-  * "organic-dna-branches"
-* "organic-dna-resolve"
+* "organic-dna-cellmodes v0.1.1"
+* "organic-dna-resolve v1.1.0"
 
 ## api & usage
 
@@ -21,8 +19,8 @@ within options argument
 ### load from default `cwd + '/dna'`
 
 ```
-var dnaLoader = require('organic-dna-loader')
-dnaLoader(function(err, dna){
+var loadDNA = require('organic-dna-loader')
+loadDNA(function(err, dna){
 
 })
 ```
@@ -30,8 +28,8 @@ dnaLoader(function(err, dna){
 ### load from custom directory
 
 ```
-var dnaLoader = require('organic-dna-loader')
-dnaLoader('./directory/dna', function(err, dna){
+var loadDNA = require('organic-dna-loader')
+loadDNA('./directory/dna', function(err, dna){
 
 })
 ```
@@ -39,8 +37,8 @@ dnaLoader('./directory/dna', function(err, dna){
 ### load with options
 
 ```
-var dnaLoader = require('organic-dna-loader')
-dnaLoader({
+var loadDNA = require('organic-dna-loader')
+loadDNA({
   dnaSourcePath: './directory/dna',
   dnaMode: 'customMode'
 }, function(err, dna){
@@ -52,13 +50,25 @@ dnaLoader({
 
 
 ```
-var dnaLoader = require('organic-dna-loader')
-dnaLoader({
+var loadDNA = require('organic-dna-loader')
+loadDNA({
   dnaSourcePaths: [
     './directory/dna',
     './directory2/dna2'
   ],
   dnaMode: 'customMode'
+}, function(err, dna){
+
+})
+```
+
+### dna load hooks
+
+```
+var loadDNA = require('organic-dna-loader')
+loadDNA({
+  beforeResolve: function (dna) { return dna },
+  afterResolve: function (dna) { return dna }
 }, function(err, dna){
 
 })
