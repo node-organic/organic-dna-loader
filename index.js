@@ -31,7 +31,7 @@ module.exports = function loadDna (src, next) {
     if (src.beforeResolve) {
       beforeResolve = src.beforeResolve
     }
-    if (src.beforeResolve) {
+    if (src.afterResolve) {
       afterResolve = src.afterResolve
     }
   }

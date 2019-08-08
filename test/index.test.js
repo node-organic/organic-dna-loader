@@ -97,4 +97,50 @@ describe('dna-loader', function () {
       next()
     })
   })
+
+  it('works with dna resolve hook afterResolve', function (next) {
+    var loader = require('../index')
+    loader({
+      dnaSourcePaths: [
+        path.join(__dirname, '/sample-dna'),
+        path.join(__dirname, '/sample-dna2')
+      ],
+      dnaMode: '_mode1',
+      afterResolve: function (dna) {
+        dna.afterResolve = true
+        return dna
+      }
+    }, function (err, dna) {
+      expect(err).to.eq(null)
+      expect(dna.index.property).to.eq('updated-42')
+      expect(dna.index2).to.eq('value-42')
+      expect(dna.index.property2).to.eq('value')
+      expect(dna.beforeResolve).to.eq(undefined)
+      expect(dna.afterResolve).to.eq(true)
+      next()
+    })
+  })
+
+  it('works with dna resolve hook beforeResolve', function (next) {
+    var loader = require('../index')
+    loader({
+      dnaSourcePaths: [
+        path.join(__dirname, '/sample-dna'),
+        path.join(__dirname, '/sample-dna2')
+      ],
+      dnaMode: '_mode1',
+      beforeResolve: function (dna) {
+        dna.beforeResolve = true
+        return dna
+      }
+    }, function (err, dna) {
+      expect(err).to.eq(null)
+      expect(dna.index.property).to.eq('updated-42')
+      expect(dna.index2).to.eq('value-42')
+      expect(dna.index.property2).to.eq('value')
+      expect(dna.beforeResolve).to.eq(true)
+      expect(dna.afterResolve).to.eq(undefined)
+      next()
+    })
+  })
 })
