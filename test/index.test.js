@@ -143,4 +143,14 @@ describe('dna-loader', function () {
       next()
     })
   })
+  it('works as promise', async function () {
+    var loader = require('../index')
+    const result = await loader({
+      dnaSourcePaths: [
+        path.join(__dirname, '/sample-dna'),
+      ],
+      dnaMode: '_mode1'
+    })
+    expect(result.index.property).to.eq('updated-42')
+  })
 })

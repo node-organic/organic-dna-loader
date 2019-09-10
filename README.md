@@ -12,8 +12,8 @@ Combines :
 ## api & usage
 
 * `process.env.CELL_MODE` if present is used to fold respective
-`DNA[CELL_MODE]` branch into root unless `dnaMode` is provided as 
-within options argument
+`DNA[CELL_MODE]` branch into root unless `dnaMode` is provided 
+within options
 
 
 ### load from default `cwd + '/dna'`
@@ -67,9 +67,16 @@ loadDNA({
 ```
 var loadDNA = require('organic-dna-loader')
 loadDNA({
-  beforeResolve: function (dna) { return dna },
-  afterResolve: function (dna) { return dna }
+  beforeResolve: async function (dna) { },
+  afterResolve: async function (dna) { }
 }, function(err, dna){
 
 })
+```
+
+### load dna as Promise
+
+```
+const loadDNA = require('organic-dna-loader')
+let dna = await loadDNA(options)
 ```
