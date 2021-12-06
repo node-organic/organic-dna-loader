@@ -2,11 +2,12 @@
 All notable changes to this project will be documented in this file.
 This project adheres to [Semantic Versioning](http://semver.org/).
 
-## [major.minor.patch] - YYYY-MM-DD
+## 1.8.1 - 2021-12-06
 
-### Changed
-### Added
-### Removed
+### Fixed
+
+- security audit
+- dependencies
 
 ## 1.8.0 - 2019-09-10
 

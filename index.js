@@ -1,17 +1,17 @@
-var path = require('path')
+const path = require('path')
 
-var DNA = require('organic').DNA
-var loadDir = require('organic-dna-fsloader').loadDir
-var resolveFn = require('organic-dna-resolve')
-var selectModes = require('organic-dna-cellmodes')
-var async = require('async')
+const DNA = require('organic').DNA
+const loadDir = require('organic-dna-fsloader').loadDir
+const resolveFn = require('organic-dna-resolve')
+const selectModes = require('organic-dna-cellmodes')
+const async = require('async')
 
 module.exports = function loadDna (src, next) {
-  var dnaSourcePaths = src
-  var dnaMode = process.env.CELL_MODE
-  var beforeResolve = null
-  var afterResolve = null
-  var skipResolve = false
+  let dnaSourcePaths = src
+  let dnaMode = process.env.CELL_MODE
+  let beforeResolve = null
+  let afterResolve = null
+  let skipResolve = false
   if (!Array.isArray(src)) {
     dnaSourcePaths = [src]
   }
@@ -40,7 +40,7 @@ module.exports = function loadDna (src, next) {
     }
   }
 
-  var dna = new DNA()
+  const dna = new DNA()
   return new Promise(function (resolve, reject) {
     async.eachSeries(dnaSourcePaths, function (dnaPath, nextDna) {
       loadDir(dna, dnaPath, function (err) {
